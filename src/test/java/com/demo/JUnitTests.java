@@ -10,7 +10,6 @@ public class JUnitTests {
     }
 
 
-
     @BeforeEach
     void beforeEach() {
         System.out.println("     beforeEach()");
