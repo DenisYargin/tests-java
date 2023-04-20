@@ -1,6 +1,7 @@
-package com.demo;
+package com.demo.TestTextBox;
 
 import com.codeborne.selenide.Configuration;
+import com.demo.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -8,12 +9,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxTest extends TestBase {
+    String url = "text-box";
 
     @Test
     void successfulFillFormTest() {
-        String url = "text-box";
-        open(url);
 
+        open(url);
 //        $("[id=userName]").setValue("Mr Smith");
         $("#userName").setValue("Mr Smith");
         $("#userEmail").setValue("aa@aaa.com");
