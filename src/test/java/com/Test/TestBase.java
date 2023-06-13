@@ -1,4 +1,4 @@
-package com.demo;
+package com.Test;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;

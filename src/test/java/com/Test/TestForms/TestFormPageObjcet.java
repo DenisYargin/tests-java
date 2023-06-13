@@ -1,16 +1,13 @@
-package com.demo.TestForms;
+package com.Test.TestForms;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.demo.TestBase;
+import com.Test.TestBase;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestForm extends TestBase {
+public class TestFormPageObjcet extends TestBase {
     String urlForms = "https://demoqa.com/automation-practice-form";
     SelenideElement name = $("#firstName");
     SelenideElement lastName = $("#lastName");

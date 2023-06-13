@@ -1,7 +1,6 @@
-package com.demo.TestTextBox;
+package com.Test.TestTextBox;
 
-import com.codeborne.selenide.Configuration;
-import com.demo.TestBase;
+import com.Test.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
