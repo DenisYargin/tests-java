@@ -1,4 +1,4 @@
-package com.Test.github.TestForms;
+package com.Test.demo.TestForms;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
