@@ -1,9 +1,11 @@
 package com.Test;
 
 import com.codeborne.selenide.Configuration;
+import com.pages.RegistrationPage;
 import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
+    public RegistrationPage registrationPage = new RegistrationPage();
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com/";

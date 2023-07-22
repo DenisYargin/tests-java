@@ -1,5 +1,5 @@
 HELP.md
-build/
+*.build
 !**/src/main/**
 !**/src/test/**
 *.iws
