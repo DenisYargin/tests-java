@@ -1,12 +1,8 @@
 package com.Test.demo.TestTextBox;
 
 import com.Test.TestBase;
-import com.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
-import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -30,9 +26,8 @@ public class RegistrationTest extends TestBase {
         $("#userNumber").setValue("89023770262");
         $("#currentAddress").setValue("Russia Kazan");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("April");
-        $(".react-datepicker__year-select").selectOption("1994");
-        $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
+
+        registrationPage.setDate("11", "april", "1994") ;
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports"));
        // $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
@@ -43,9 +38,12 @@ public class RegistrationTest extends TestBase {
         $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
 
-        $(".modal-dialog").should(appear); //должен появиться
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form")); // проверяем текст
-        $(".table-responsive").shouldHave(text("Denis"), text("Yargin"),
-                text("deiderd@mail.ru"), text("Russia Kazan"));
+        //verifyModalAppers
+        registrationPage.verifyRegistrationResultsModalAppears()
+                .verifyResults("Full name", "Denis Yargin")
+                        .verifyResults("Email", "deiderd@mail.ru")
+                .verifyResults("Point", "Russia Kazan");
+
+
     }
 }
