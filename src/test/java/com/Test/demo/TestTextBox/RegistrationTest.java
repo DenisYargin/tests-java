@@ -1,6 +1,7 @@
 package com.Test.demo.TestTextBox;
 
 import com.Test.TestBase;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -15,21 +16,21 @@ public class RegistrationTest extends TestBase {
 
     @Test
     void successfulRegistrationTest() {
+        Faker faker = new Faker();
+        String firstName = faker.name().firstName();
+        String lastName = faker.name().lastName();
+        String mail = faker.internet().emailAddress();
 
         registrationPage.openPage()
-                        .setFirstName("Denis")
-                        .setLastName("Yargin")
-                        .setUserEmail("deiderd@mail.ru")
+                        .setFirstName(firstName)
+                        .setLastName(lastName)
+                        .setUserEmail(mail)
                         .setGender()
-                        .setUserNumber("+79023770262");
-
-        $("#userNumber").setValue("89023770262");
-        $("#currentAddress").setValue("Russia Kazan");
-        $("#dateOfBirthInput").click();
-
-        registrationPage.setDate("11", "april", "1994") ;
-        $("#subjectsInput").setValue("Math").pressEnter();
-        $("#hobbiesWrapper").$(byText("Sports"));
+                        .setUserNumber("89023770262")
+                        .setAddress("Russia Kazan")
+                        .setSubject("Math")
+                        .setHobbies("Sports");
+        registrationPage.setDate("11", "April", "1994");
        // $("#uploadPicture").uploadFile(new File("src/test/resources/img/1.png"));
         $("#uploadPicture").uploadFromClasspath("img/1.png");
         $("#state").click();
@@ -40,9 +41,9 @@ public class RegistrationTest extends TestBase {
 
         //verifyModalAppers
         registrationPage.verifyRegistrationResultsModalAppears()
-                .verifyResults("Full name", "Denis Yargin")
-                        .verifyResults("Email", "deiderd@mail.ru")
-                .verifyResults("Point", "Russia Kazan");
+                .verifyResults("Student Name", firstName + " " + lastName)
+                        .verifyResults("Student Email", mail)
+                .verifyResults("Address", "Russia Kazan");
 
 
     }
