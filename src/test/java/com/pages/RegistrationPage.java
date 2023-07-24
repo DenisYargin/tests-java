@@ -23,7 +23,11 @@ public class RegistrationPage {
             userEmailInput = $("#userEmail"),
             userNumber = $("#userNumber"),
             gender = $("#gender-radio-1"),
-            formHeaderText = $(".practice-form-wrapper");
+            formHeaderText = $(".practice-form-wrapper"),
+            currentAddress = $("#currentAddress"),
+            dateInput = $("#dateOfBirthInput"),
+            subjectInput = $("#subjectsInput"),
+            hobbies = $("#hobbiesWrapper");
 
 
     public RegistrationPage openPage() {
@@ -65,8 +69,27 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage setAddress(String address) {
+        currentAddress.setValue(address);
+
+        return this;
+    }
+
+    public RegistrationPage setSubject(String subject) {
+        subjectInput.setValue(subject).pressEnter();
+
+        return this;
+    }
+
+    public RegistrationPage setHobbies(String hobbi) {
+        hobbies.$(byText(hobbi)).click();
+
+        return this;
+    }
+
     public RegistrationPage setDate(String day, String month, String year) {
-        calendarCompanent.setDate("11", "april", "1994");
+        dateInput.click();
+        calendarCompanent.setDate(day, month, year);
 
         return this;
     }
