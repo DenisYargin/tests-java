@@ -13,5 +13,5 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '8'
-          #запускаем тестыss
+          #запускаем тестыsss
       - run: .gradlew clean test
