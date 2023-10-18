@@ -1,0 +1,10 @@
+{
+  "name": "Denis",
+  "age": 29,
+  "isClever": true,
+  "hobbies": ["Football","VideGame"],
+  "passport": {
+    "number": 3232323,
+    "issueDate": "14 jan"
+  }
+}
