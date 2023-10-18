@@ -1,0 +1,17 @@
+name: TestDenis
+on: [ push ]
+jobs:
+  TestDenis:
+    #где запускаем
+    runs-on: ubuntu-runners
+    #что делаем
+    steps:
+      #выкачиваем репозиторий
+      - uses: actions/checkout@v4
+        #настриваем java
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '8'
+          #запускаем тестыs
+      - run: .gradlew clean test
