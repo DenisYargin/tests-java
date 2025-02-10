@@ -15,15 +15,15 @@ public class TextBoxTest extends TestBase {
 
         open(url);
 //        $("[id=userName]").setValue("Mr Smith");
-        $("#userName").setValue("Mr Smith");
-        $("#userEmail").setValue("aa@aaa.com");
-        $("#currentAddress").setValue("Some street 1");
-        $("#permanentAddress").setValue("Another street 1");
+        $("#userName").setValue("Denis Yargin");
+        $("#userEmail").setValue("deiderd@mail.ru");
+        $("#currentAddress").setValue("Kazan");
+        $("#permanentAddress").setValue("Russia");
         $("#submit").click();
 
-        $("#output").shouldHave(text("Mr Smith"), text("aa@aaa.com"),
-                text("Some street 1"), text("Another street 1"));
+        $("#output").shouldHave(text("Denis Yargin"), text("deiderd@mail.ru"),
+                text("Kazan"), text("Russia"));
 
-        $("#output #name").shouldHave(text("Mr Smith"));
+        $("#output #name").shouldHave(text("Denis Yargin"));
     }
 }
