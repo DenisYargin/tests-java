@@ -3,11 +3,14 @@ package com.Test.demo.TestForms;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.Test.TestBase;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestFormPageObjcet extends TestBase {
+
     String urlForms = "https://demoqa.com/automation-practice-form";
     SelenideElement name = $("#firstName");
     SelenideElement lastName = $("#lastName");
@@ -23,6 +26,7 @@ public class TestFormPageObjcet extends TestBase {
 
     @Test
     void checkSetFormsSuccess(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
         open(urlForms);
         name.setValue("Denis");
         lastName.setValue("Yargin");

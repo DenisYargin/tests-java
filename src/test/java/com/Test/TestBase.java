@@ -13,6 +13,7 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browserSize = "1920x1080";
          Configuration.pageLoadStrategy = "none";
+         Configuration.holdBrowserOpen = true;
 //        Configuration.browser = "chrome";
 //        Configuration.timeout = 3000;
     }
